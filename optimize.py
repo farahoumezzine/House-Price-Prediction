@@ -17,6 +17,7 @@ rf = RandomForestRegressor(random_state=42)
 grid_search = GridSearchCV(rf, param_grid, cv=5, scoring='neg_mean_squared_error')
 grid_search.fit(X_train, y_train)
 
+# Extract best model
 best_rf = grid_search.best_estimator_
 y_pred = best_rf.predict(X_test)
 
